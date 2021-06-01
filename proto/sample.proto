@@ -1,0 +1,15 @@
+//WPO Proto Definition File
+//python -m grpc_tools.protoc -I./proto --python_out=. --grpc_python_out=. ./proto/sample.proto
+syntax = "proto3";
+
+message Records {
+    string data = 1;
+}
+
+message Acknowledgement {
+    string responseData = 1;
+}
+
+service SampleService {
+    rpc sendData (Records) returns (Acknowledgement) {}
+}
